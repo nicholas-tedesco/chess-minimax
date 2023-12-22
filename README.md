@@ -1,5 +1,4 @@
 # Chess Player
-_________________________
 
 Objective: create an intelligent agent to serve as a chess player using the minimax algorithm 
 
@@ -10,6 +9,7 @@ Implementation Details:
 Change Log: 
 - 12/22/2023: overhaul to openings system; replaced PGN parsing with polyglot openings book consultation
 
+---------------------
 __________________________________________________________________________________________________________
 
 ## Openings
