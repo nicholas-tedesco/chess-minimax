@@ -1,9 +1,18 @@
-# chess-minimax
+# Chess Player
 
-Objective: create an intelligent agent to play chess against using the minimax algorithm 
+Objective: create an intelligent agent to serve as a chess player using the minimax algorithm 
 
-Details: 
-- I love to play chess in my free time, so I thought this would be a fun personal project!
-- I was exposed to basic game theory, including the minimax algorithm and associated optimization strategies, during my time in Georgia Tech's Artificial Intelligence course
-- currently, the player references an openings database (~10,000 lines/variations). once opening theory is exhausted, the minimax algorithm is called
-- still a work in progress... I need to go back and fix a few things (move choice logic for minimax algorithm, improved scoring, better function structure, more comments, etc.)
+Implementation Details: 
+- if current game state is present in openings database, agent chooses move with highest weight
+- else, agent calls minimax function to retrieve move
+
+Change Log: 
+- 12/22/2023: overhaul to openings system; replaced PGN parsing with polyglot openings book consultation
+
+__________________________________________________________________________________________________________
+
+## Openings
+
+Since many of the best 
+
+
