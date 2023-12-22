@@ -9,11 +9,8 @@ Implementation Details:
 Change Log: 
 - 12/22/2023: overhaul to openings system; replaced PGN parsing with polyglot openings book consultation
 
----------------------
-__________________________________________________________________________________________________________
-
 ## Openings
 
-Since many of the best 
+Chess has been played for a VERY long time - some 
 
 
