@@ -13,7 +13,9 @@ Change Log:
 
 ## Project Specifics
 
-### User Interface + Board Rendering 
+#### Board Rendering
+
+This project makes use of python-chess, which is a chess library for python that handles the game rules and general user interface. 
 
 <img src="/images/starting-board.png" width="500" height="500">
 
