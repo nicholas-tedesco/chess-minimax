@@ -4,19 +4,19 @@
 
 Objective: create an intelligent agent to serve as a chess player using the minimax algorithm 
 
-Implementation Details: 
+Implementation Summary: 
 - if current game state is present in openings database, agent chooses move with highest weight
 - else, agent uses minimax algorithm to choose move
 
 Change Log: 
 - 12/22/2023: overhaul to openings system; replaced PGN parsing with polyglot openings book consultation
 
-## Project Specifics
+## Project Details
 
-#### Board Rendering
+#### python-chess
 
-This project makes use of python-chess, which is a chess library for python that handles the game rules and general user interface. 
+All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. 
 
-<img src="/images/starting-board.png" width="500" height="500">
+<img src="/images/starting-board.png" width="250" height="250">
 
 
