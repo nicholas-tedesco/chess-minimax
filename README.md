@@ -15,7 +15,8 @@ Change Log:
 
 Chess is a game where involving two players, each in control of their own army of pieces. 
 
-<img style="float: center;" src="/images/starting-board.png">
+<img style="float: right;" src="/images/starting-board.png">
+
 ![starting-board](/images/starting-board.png)
 
 
