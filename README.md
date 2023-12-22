@@ -10,6 +10,7 @@ Implementation Summary:
 
 Change Log: 
 - 12/22/2023: overhaul to openings system; replaced PGN parsing with consultation of polyglot openings book
+- 12/09/2023: added explored game state lookup to minimax algorithm using Zobrist hashing 
 
 ## Project Details
 
@@ -31,7 +32,16 @@ For more on python-chess, please visit [https://python-chess.readthedocs.io/en/l
 
 ### _Opening Move Selection_
 
-This project makes use of an chess openings book, which is a collection of the "best" starting moves. Chess openings books typically come in a polyglot format[https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
+This project makes use of an chess openings book, which is a collection of the "best" starting moves for a game of chess. An openings book can be used to search for a given board position in order to find the best possible continuations from the current game state. 
+
+But what's the point of an openings book if we already have an algorithm to choose moves? 
+1. Our recursive minimax algorithm is much more computationally expensive compared to simple position lookup
+2. Opening theory is somewhat complex; often times, we are setting up our pieces to attack specific squares, or to be positioned in certain ways for later on in the game. The minimax algorithm will not have the same level of positional chess knowledge compared to a hard-coded openings book
+
+Opening books for chess engines typically follow a polyglot file format, which basically links moves and associated weights to a hashed position. The best move is the one which maximizes the weight for a given position. For example, we may find that Position A is linked to two moves in the openings book: Move 1 and Move 2. Move 1 has weight 20, and move 2 has weight 30. In this case, we would want to chose Move 2! 
+
+Here is the openings book used in this project: [https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
+For more on polyglot file structure, please visit [http://hgm.nubati.net/book_format.html]. 
 
 For a given g
 
