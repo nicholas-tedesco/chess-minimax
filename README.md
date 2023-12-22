@@ -15,6 +15,6 @@ Change Log:
 
 ### User Interface + Board Rendering 
 
-<img src="/images/starting-board.png" width="100" height="100">
+<img src="/images/starting-board.png" width="500" height="500">
 
 
