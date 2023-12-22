@@ -13,7 +13,7 @@ Change Log:
 
 ## Project Details
 
-_python-chess_
+**_python-chess_**
 
 All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. To play a game, we...
 1. create on object of class "Board": ```game = chess.Board()```
