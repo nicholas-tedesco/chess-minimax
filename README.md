@@ -13,7 +13,7 @@ Change Log:
 
 ## Project Details
 
-#### python-chess
+_python-chess_
 
 All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. 
 
