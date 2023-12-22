@@ -24,11 +24,11 @@ All board rendering and core game logic (e.g., legal move validation, checkmate,
   
 Here's what the starting position of a chess game looks like in python-chess: 
 
-<img src="/images/starting-board.png" width="250">
+<img src="/images/starting-board.png" width="400">
 
 For more on python-chess, please visit [https://python-chess.readthedocs.io/en/latest/core.html]. 
 
-_Opening Moves_
+**_Opening Move Selection_**
 
 This project makes use of an chess openings book, which is a collection of the "best" starting moves. Chess openings books typically come in a polyglot format[https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
 
