@@ -17,7 +17,7 @@ Change Log:
 
 All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. To play a game using python-chess, we... 
 1. create on object of class "Board": ```game = chess.Board()```
-2. "push" moves to the board object:  ```game.push_san('e2e4')```
+2. "push" moves to the board: ```game.push_san('e2e4')```
    
    - different variations of the push method are available for different classes of move inputs 
    - python-chess has its own "Move" class, which is used in conjuction with the "move" method
