@@ -15,11 +15,15 @@ Change Log:
 
 _python-chess_
 
-All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. For more on python-chess, please visit [https://python-chess.readthedocs.io/en/latest/core.html]. 
+All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. To play a game, we...
+1. create a "Board" object: ```game = chess.Board()```
+2. use the "push" method to pass moves to the board: ```game.push_san('e2e4')```
+
+For more on python-chess, please visit [https://python-chess.readthedocs.io/en/latest/core.html]. 
 
 _Opening Moves_
 
-This project makes use of an openings book, which is a collection of the "best" starting moves for a game of chess. Here is the specific openings book that I used: [https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
+This project makes use of an chess openings book, which is a collection of the "best" starting moves. Chess openings books typically come in a polyglot format[https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
 
 For a given g
 
