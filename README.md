@@ -11,12 +11,10 @@ Implementation Details:
 Change Log: 
 - 12/22/2023: overhaul to openings system; replaced PGN parsing with polyglot openings book consultation
 
-## Introduction
+## Project Specifics
 
-Chess is a game where involving two players, each in control of their own army of pieces. 
+### User Interface + Board Rendering 
 
-<img style="float: right;" src="/images/starting-board.png">
-
-![starting-board](/images/starting-board.png)
+<img src="/images/starting-board.png" width="100" height="100">
 
 
