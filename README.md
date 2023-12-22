@@ -13,7 +13,7 @@ Change Log:
 
 ## Project Details
 
-**_python-chess_**
+### _python-chess_
 
 All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. To play a game using python-chess, we... 
 1. create on object of class "Board": ```game = chess.Board()```
@@ -28,7 +28,7 @@ Here's what the starting position of a chess game looks like in python-chess:
 
 For more on python-chess, please visit [https://python-chess.readthedocs.io/en/latest/core.html]. 
 
-**_Opening Move Selection_**
+### _Opening Move Selection_
 
 This project makes use of an chess openings book, which is a collection of the "best" starting moves. Chess openings books typically come in a polyglot format[https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
 
@@ -36,8 +36,8 @@ For a given g
 
 The openings book 
 
-_Minimax_
+### _Minimax_
 
-_Minimax Optimizations_ 
+### _Algorithm Optimizations_
 
 
