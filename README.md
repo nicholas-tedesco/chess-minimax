@@ -9,14 +9,24 @@ Implementation Summary:
 - else, agent uses minimax algorithm to choose move
 
 Change Log: 
-- 12/22/2023: overhaul to openings system; replaced PGN parsing with polyglot openings book consultation
+- 12/22/2023: overhaul to openings system; replaced PGN parsing with consultation of polyglot openings book
 
 ## Project Details
 
 _python-chess_
 
-All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. 
+All board rendering and core game logic (e.g., legal move validation, checkmate, etc.) is handled by the python-chess library. For more on python-chess, please visit [https://python-chess.readthedocs.io/en/latest/core.html]. 
 
-<img src="/images/starting-board.png" width="250" height="250">
+_Opening Moves_
+
+This project makes use of an openings book, which is a collection of the "best" starting moves for a game of chess. Here is the specific openings book that I used: [https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
+
+For a given g
+
+The openings book 
+
+_Minimax_
+
+_Minimax Optimizations_ 
 
 
