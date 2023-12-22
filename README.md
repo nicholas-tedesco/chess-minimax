@@ -1,4 +1,4 @@
-# Personal Project: Chess Player
+# Chess Player
 
 Objective: create an intelligent agent to serve as a chess player using the minimax algorithm 
 
