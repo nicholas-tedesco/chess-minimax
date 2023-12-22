@@ -21,6 +21,10 @@ All board rendering and core game logic (e.g., legal move validation, checkmate,
    
    - different variations of the push method are available for different move input class types
    - python-chess has its own "Move" class which is used in conjuction with the "move" method; for string moves, we use the "push_san" method
+  
+Here's what the starting position of a chess game looks like in python-chess: 
+
+<img src="/images/starting-board.png" width="250">
 
 For more on python-chess, please visit [https://python-chess.readthedocs.io/en/latest/core.html]. 
 
