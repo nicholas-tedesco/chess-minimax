@@ -4,13 +4,15 @@ Objective: create an intelligent agent to serve as a chess player using the mini
 
 Implementation Details: 
 - if current game state is present in openings database, agent chooses move with highest weight
-- else, agent calls minimax function to retrieve move
+- else, agent uses minimax algorithm to choose move
 
 Change Log: 
 - 12/22/2023: overhaul to openings system; replaced PGN parsing with polyglot openings book consultation
 
-## Openings
+## Overview
 
-Chess has been played for a VERY long time - some 
+Chess
+
+![starting-board](/images/starting-board.png)
 
 
