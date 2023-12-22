@@ -20,7 +20,8 @@ All board rendering and core game logic (e.g., legal move validation, checkmate,
 2. use the "push" method to pass moves to the board: ```game.push_san('e2e4')```
    
    - different variations of the push method are available for different move input class types
-   - python-chess has its own "Move" class which is used in conjuction with the "move" method; for string moves, we use the "push_san" method
+   - python-chess has its own "Move" class which is used in conjuction with the "move" method
+   - for string moves in standard algebraic notation (SAN), we use the "push_san" method
   
 Here's what the starting position of a chess game looks like in python-chess: 
 
