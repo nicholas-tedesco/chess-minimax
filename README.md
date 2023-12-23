@@ -32,7 +32,7 @@ For more on python-chess, please visit [python-chess.readthedocs.io](https://pyt
 
 ### _Opening Move Selection_
 
-This project makes use of an chess openings book, which is a collection of the "best" starting moves for a game of chess. An openings book can be used to search for a given board position in order to find the best possible continuations from the current game state. In this project, we use [The Baron's Polygot Opening Book](https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/). 
+This project makes use of an chess openings book, which is a collection of the "best" starting moves for a game of chess. An openings book can be used to search for a given board position in order to find the best possible continuations from the current game state. In this project, we use the [Titans Opening Book](https://chess.stackexchange.com/questions/35448/looking-for-polyglot-opening-books) from Flavio Martin. 
 
 But what's the point of an openings book if we already have an algorithm to choose moves? 
 1. Our recursive minimax algorithm is much more computationally expensive compared to simple position lookup
