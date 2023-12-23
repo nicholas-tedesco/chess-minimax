@@ -43,10 +43,6 @@ Opening books for chess engines typically follow a polyglot file format, which b
 Here is the openings book used in this project: [https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
 For more on polyglot file structure, please visit [http://hgm.nubati.net/book_format.html]. 
 
-For a given g
-
-The openings book 
-
 ### _Minimax_
 
 ### _Algorithm Optimizations_
