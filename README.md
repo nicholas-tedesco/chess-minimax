@@ -40,8 +40,10 @@ But what's the point of an openings book if we already have an algorithm to choo
 
 Opening books for chess engines typically follow a polyglot file format, which basically links moves and associated weights to a hashed position. Consider the following position and it's associated moves/weights: 
 
-<img src="/images/test-opening-board.png" width="400">
-<img src="/images/test-opening-moves.png" width="150">
+<p float="left">
+  <img src="/images/test-opening-board.png" width="400">
+   <img src="/images/test-opening-moves.png" width="150">
+</p>
 
 For more on polyglot file structure, please visit http://hgm.nubati.net/book_format.html.
 
