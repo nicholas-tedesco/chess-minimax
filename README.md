@@ -28,7 +28,7 @@ Here's what the starting position of a chess game looks like in python-chess:
 
 <img src="/images/starting-board.png" width="400">
 
-For more on python-chess, please visit [https://python-chess.readthedocs.io/en/latest/core.html]. 
+For more on python-chess, please visit [https://python-chess.readthedocs.io/en/latest/core.html]
 
 ### _Opening Move Selection_
 
@@ -40,9 +40,8 @@ But what's the point of an openings book if we already have an algorithm to choo
 
 Opening books for chess engines typically follow a polyglot file format, which basically links moves and associated weights to a hashed position. The best move is the one which maximizes the weight for a given position. For example, we may find that Position A is linked to two moves in the openings book: Move 1 and Move 2. Move 1 has weight 20, and move 2 has weight 30. In this case, we would want to chose Move 2! 
 
-Here is the openings book used in this project: [https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]. 
-
-For more on polyglot file structure, please visit [http://hgm.nubati.net/book_format.html]. 
+Here is the openings book used in this project: [https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/]
+For more on polyglot file structure, please visit [http://hgm.nubati.net/book_format.html]
 
 ### _Minimax_
 
