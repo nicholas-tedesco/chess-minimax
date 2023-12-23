@@ -40,7 +40,7 @@ But what's the point of an openings book if we already have an algorithm to choo
 
 Opening books for chess engines typically follow a polyglot file format, which basically links moves and associated weights to a hashed position. The best move is the one which maximizes the weight for a given position. For example, we may find that Position A is linked to two moves in the openings book: Move 1 (weight = 30) and Move 2 (weight = 40). In this case, we would want to chose Move 2! 
 
-Here is the openings book used in this project: https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/  
+The openings book used in this project can be found [here](https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/)
 For more on polyglot file structure, please visit http://hgm.nubati.net/book_format.html  
 
 ### _Minimax_
