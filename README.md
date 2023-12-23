@@ -28,11 +28,11 @@ Here's what the starting position of a chess game looks like in python-chess:
 
 <img src="/images/starting-board.png" width="400">
 
-For more on python-chess, please visit [python-chess.readthedocs.io](https://python-chess.readthedocs.io/en/latest/core.html)
+For more on python-chess, please visit [python-chess.readthedocs.io](https://python-chess.readthedocs.io/en/latest/core.html).
 
 ### _Opening Move Selection_
 
-This project makes use of an chess openings book, which is a collection of the "best" starting moves for a game of chess. An openings book can be used to search for a given board position in order to find the best possible continuations from the current game state. 
+This project makes use of an chess openings book, which is a collection of the "best" starting moves for a game of chess. An openings book can be used to search for a given board position in order to find the best possible continuations from the current game state. In this project, we use [The Baron's Polygot Opening Book](https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/). 
 
 But what's the point of an openings book if we already have an algorithm to choose moves? 
 1. Our recursive minimax algorithm is much more computationally expensive compared to simple position lookup
@@ -40,8 +40,7 @@ But what's the point of an openings book if we already have an algorithm to choo
 
 Opening books for chess engines typically follow a polyglot file format, which basically links moves and associated weights to a hashed position. The best move is the one which maximizes the weight for a given position. For example, we may find that Position A is linked to two moves in the openings book: Move 1 (weight = 30) and Move 2 (weight = 40). In this case, we would want to chose Move 2! 
 
-The openings book used in this project can be found [here](https://www.chessprogramming.net/new-version-of-the-baron-v3-43-plus-the-barons-polyglot-opening-book/)  
-For more on polyglot file structure, please visit http://hgm.nubati.net/book_format.html  
+For more on polyglot file structure, please visit http://hgm.nubati.net/book_format.html.
 
 ### _Minimax_
 
