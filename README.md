@@ -1,4 +1,4 @@
-# Chess Player
+# Chess Minimax
 
 ## Overview
 
