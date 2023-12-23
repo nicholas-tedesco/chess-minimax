@@ -45,7 +45,7 @@ Opening books for chess engines typically follow a polyglot file format, which b
    <img src="/images/test-opening-moves.png" width="150" align="middle">
 </p>
 
-As you can see, our openings book contains a few possible continuations from this position. Although one move is technically the "best" in terms of weights, the other moves are also viable. In order to introduce some variability into opening move selection, I decided to choose opening moves based on weighted random selection. 
+As you can see, our openings book contains a few possible continuations from this position. Although one move is technically the "best" in terms of weights, the other moves are also viable. In order to introduce some variability into this chess engine's openings, I decided to to use weighted random selection to select moves from the opening book. 
 
 For more on polyglot file structure, please visit http://hgm.nubati.net/book_format.html.
 
