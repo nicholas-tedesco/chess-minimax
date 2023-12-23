@@ -38,7 +38,10 @@ But what's the point of an openings book if we already have an algorithm to choo
 1. Our recursive minimax algorithm is much more computationally expensive compared to simple position lookup
 2. Opening theory is somewhat complex; often times, we are setting up our pieces to attack specific squares, or to be positioned in certain ways for later on in the game. The minimax algorithm will not have the same level of positional chess knowledge compared to a hard-coded openings book
 
-Opening books for chess engines typically follow a polyglot file format, which basically links moves and associated weights to a hashed position. The best move is the one which maximizes the weight for a given position.
+Opening books for chess engines typically follow a polyglot file format, which basically links moves and associated weights to a hashed position. Consider the following position and it's associated moves/weights: 
+
+<img src="/images/test-opening-board.png" width="400">
+<img src="/images/test-opening-moves.png" width="400">
 
 For more on polyglot file structure, please visit http://hgm.nubati.net/book_format.html.
 
