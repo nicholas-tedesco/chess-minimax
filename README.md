@@ -61,18 +61,23 @@ Consider the following example (taken from [baeldung.com](https://www.baeldung.c
 
 Once we know our scores for the bottom four terminal nodes, we can proceed back up the tree by maximizing and minimizing on the appropriate layers. In this example, node values for the second layer of the tree are assigned by taking the minimum of child node scores in the third layer. Node values for the first layer (i.e., root node) are assigned by taking the maximum of child node scores in the second layer. 
 
-Arguably the most important aspect of the minimax algorithm is the heuristic function, considering this is what the algorithm uses to understand the favorability of a certain game state. In this project, we are using a heuristic function based on both material and position. In terms of material, we assign certain weights to each of the chess pieces (e.g., if we are white, white queen = 900, black queen = -900, white rook = 500, etc.), and calculate material score by summing the weights for the pieces on the board. In terms of position, we encourage the algorithm to place pieces on "better" squares by providing position tables for each piece type. Consider the provided position table for a knight: 
+Arguably the most important aspect of the minimax algorithm is the heuristic function, considering this is what the algorithm uses to understand the favorability of a certain game state. In this project, we are using a heuristic function based on both material and position. In terms of material, we assign certain weights to each of the chess pieces (e.g., if we are white, white queen = 900, black queen = -900, white rook = 500, etc.), and calculate material score by summing the weights for the pieces on the board. In terms of position, we encourage the algorithm to place pieces on "better" squares by providing position tables for each piece type. A chess position table is simply a collection of all possible positions and associated scores for a given piece type. Consider the provided position table for a knight: 
 
 <img src="/images/knight-position-table.png" width="400" align="middle">
 
-As shown in the table, we assign a negative score to a knight on its starting square (to encourage the algorithm to move the knight), a more neutral score to a knight on the edge of the board (where it controls fewer squares, but has moved away from its starting position), and a positive score to a knight in the center of the board (where it controls the most squares). As you might imagine, position tables can be a bit subjective depending on the given player's preferences for piece positioning. This project makes use of existing position tables taken from the [chess programming wiki page for evaluation functions](https://www.chessprogramming.org/Simplified_Evaluation_Function).
+We assign the most negative scores to the positions in which the knight controls the fewest squares (edges + corners of the board) and the most positive scores to the positions in which the knight controls the most squares (center of the board). As you might imagine, position tables can be a bit subjective depending on the given player's preferences for piece positioning. This project makes use of existing position tables taken from the [chess programming wiki page for evaluation functions](https://www.chessprogramming.org/Simplified_Evaluation_Function).
 
 ### _Algorithm Optimizations_
 
 Minimax can be quite slow when we have a high branching factor or depth of search. However, there are certain optimizations that can allow us to make fewer recursive calls, thus placing less computational stress on our algorithm. Here are the optimizations that I use in my implementation of minimax: 
 
-1. Transposition Tables
-- a transposition table is a dictionary of game states mapped to their associated scores 
-- if the game state exists in the transposition table, simply use the score from the table instead of continuing down the more intensive recursive evaluation path
-- Zobrist hashing is a common technique used to convert a game state into an acceptable key format for dictionaries; for more on Zobrist hashing, please visit its associated [chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing)
-2. Alpha-Beta Pruning
+Transposition Tables  
+   - a transposition table is a dictionary of game states mapped to their associated scores   
+   - if the game state exists in the transposition table, simply use the score from the table instead of continuing down the more intensive recursive evaluation path  
+   - Zobrist hashing is a common technique used to convert a game state into an acceptable key format for transposition dictionaries; please visit the [Zobrist hashing chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing) for more info on the topic  
+   
+Alpha-Beta Pruning   
+- test  
+
+Iterative Deepening  
+- test  
