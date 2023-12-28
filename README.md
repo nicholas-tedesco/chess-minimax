@@ -65,4 +65,6 @@ Arguably the most important aspect of the minimax algorithm is the heuristic fun
 
 ### _Algorithm Optimizations_
 
+Minimax can be quite slow when we have a high branching factor or depth of search. However, there are certain optimizations that can allow us to make fewer recursive calls, thus placing less computational stress on our algorithm. Here are the optimizations that I use in my implmentation of minimax: 
 
+1. 
