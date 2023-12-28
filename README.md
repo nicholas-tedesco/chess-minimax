@@ -76,5 +76,8 @@ Transposition Tables
    - if the game state exists in the transposition table, simply use the score from the table instead of continuing down the more intensive recursive evaluation path  
    - Zobrist hashing is a common technique used to convert a game state into an acceptable key format for transposition dictionaries; for more on Zobrist hashing, please visit its associated [chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing) 
    
-Alpha-Beta Pruning  
-- test
+Alpha-Beta Pruning   
+- test  
+
+Iterative Deepening  
+- test  
