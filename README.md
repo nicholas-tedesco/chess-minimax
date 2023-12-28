@@ -63,7 +63,7 @@ Once we know our scores for the bottom four terminal nodes, we can proceed back 
 
 Arguably the most important aspect of the minimax algorithm is the heuristic function, considering this is what the algorithm uses to understand the favorability of a certain game state. In this project, we are using a heuristic function based on both material and position. In terms of material, we assign certain weights to each of the chess pieces (e.g., if we are white, white queen = 900, black queen = -900, white rook = 500, etc.), and calculate material score by summing the weights for the pieces on the board. In terms of position, we encourage the algorithm to place pieces on "better" squares by providing position tables for each piece type. Consider the provided position table for a knight: 
 
-<img src="/images/knight-position-table.png" width="800" align="middle">
+<img src="/images/knight-position-table.png" width="400" align="middle">
 
 As shown in the table, we assign a negative score to a knight on its starting square (to encourage the algorithm to move the knight), a more neutral score to a knight on the edge of the board (where it controls fewer squares, but has moved away from its starting position), and a positive score to a knight in the center of the board (where it controls the most squares). As you might imagine, position tables can be a bit subjective depending on the given player's preferences for piece positioning. This project makes use of existing position tables taken from the [chess programming wiki page for evaluation functions](https://www.chessprogramming.org/Simplified_Evaluation_Function).
 
