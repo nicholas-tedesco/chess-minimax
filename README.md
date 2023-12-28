@@ -71,8 +71,8 @@ We assign the most negative scores to the positions in which the knight controls
 
 Minimax can be quite slow when we have a high branching factor or depth of search. However, there are certain optimizations that can allow us to make fewer recursive calls, thus placing less computational stress on our algorithm. Here are the optimizations that I use in my implementation of minimax: 
 
-1. Transposition Tables
+Transposition Tables
    - a transposition table is a dictionary of game states mapped to their associated scores 
    - if the game state exists in the transposition table, simply use the score from the table instead of continuing down the more intensive recursive evaluation path
-   - Zobrist hashing is a common technique used to convert a game state into an acceptable key format for dictionaries; for more on Zobrist hashing, please visit its associated [chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing)
-2. Alpha-Beta Pruning
+   - Zobrist hashing is a common technique used to convert a game state into an acceptable key format for transposition dictionaries; for more on Zobrist hashing, please visit its associated [chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing)
+Alpha-Beta Pruning
