@@ -57,7 +57,7 @@ The core thought process behind minimax is to maximize score on our turn, and mi
 
 Consider the following example:
 
-<img src="/images/minimax-demo.png" width="400" align="middle">
+<img src="/images/minimax-demo.png" width="800" align="middle">
 
 ### _Algorithm Optimizations_
 
