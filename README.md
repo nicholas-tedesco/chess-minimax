@@ -55,7 +55,7 @@ Minimax is a recursive, depth-first seach algorithm used to choose the most opti
 
 The core thought process behind minimax is to maximize score on our turn, and minimize score on our opponent's turn. This is completely reasonable; we should always prefer moves that yield the best possible score for our own player, whereas our opponent should always prefer moves that result in the worst possible score for our player. With this in mind, we can assign alternating "max" and "min" layers as we proceed down the game tree, starting with a max layer at the root node. We continue down the game tree in this fashion until reaching terminal nodes, which may be leaf nodes (i.e., representing game over), or simply nodes at the depth level specified for our search. The heuristic function is used to assign scores to the game states at the terminal nodes. Once we have the scores at the terminal nodes, we can proceed back up the tree by taking the maximum or minimum score of the child nodes (depending on the layer) until reaching the root node. 
 
-Consider the following example: [(source)](https://www.baeldung.com/java-minimax-algorithm)
+Consider the following example (taken from [baeldung.com](https://www.baeldung.com/java-minimax-algorithm)): 
 
 <img src="/images/minimax-demo.png" width="800" align="middle">
 
