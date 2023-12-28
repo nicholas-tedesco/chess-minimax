@@ -42,7 +42,7 @@ Opening books for chess engines typically follow a polyglot file format, which b
 
 <p float="middle">
   <img src="/images/test-opening-board.png" width="400" align="middle">
-   <img src="/images/test-opening-moves.png" width="150" align="middle">
+  <img src="/images/test-opening-moves.png" width="150" align="middle">
 </p>
 
 As you can see, our openings book contains a few possible continuations from this position. Although one move is technically the "best" in terms of weights, the other moves are also viable. In order to introduce some variability into this chess engine's openings, I decided to to use weighted random selection to choose moves from the opening book. 
@@ -51,14 +51,13 @@ For more on polyglot file structure, please visit http://hgm.nubati.net/book_for
 
 ### _Minimax_
 
-Minimax is a recursive, depth-first seach algorithm used to choose the most optimal move for a given game scenario. In order to implement minimax, we must be able to represent our game as a tree structure, where the root node is our starting game state and child nodes are subsquent game states reached by making a particular move. Minimax also relies on the use of a heuristic function, which assigns a score to a particular game state. 
+Minimax is a recursive, depth-first seach algorithm used to choose the most optimal move for a given game scenario. In order to implement minimax, we must be able to represent our game as a tree structure, where the root node is our starting game state and child nodes are subsquent game states reached by making a particular move. Minimax also relies on the use of a heuristic function, which assigns a score to a provided game state. 
 
-The core thought process behind minimax is to maximize score on our turn, and minimize score on the opponent's turn. This is completely reasonable, considering we would always prefer moves that yield the best possible score for our player, whereas our opponent would always prefer moves that result in the worst possible score for our player. With this in mind, we can assign alternating "max" and "min" layers as we proceed down the game tree, starting with a max layer at the root node. On max layers, we take the maximum of the child nodes; on min layers, we take the minimum of the child nodes. We continue down the game tree in this fashion until reaching terminal nodes, which may be true leaf nodes (i.e., representing the end of the game), or simply nodes at the depth level specified for our search. The heuristic function is used to assign scores to the game states at the terminal nodes. 
+The core thought process behind minimax is to maximize score on our turn, and minimize score on our opponent's turn. This is completely reasonable; we should always prefer moves that yield the best possible score for our own player, whereas our opponent should always prefer moves that result in the worst possible score for our player. With this in mind, we can assign alternating "max" and "min" layers as we proceed down the game tree, starting with a max layer at the root node. We continue down the game tree in this fashion until reaching terminal nodes, which may be leaf nodes (i.e., representing game over), or simply nodes at the depth level specified for our search. The heuristic function is used to assign scores to the game states at the terminal nodes. Once we have the scores at the terminal nodes, we can proceed back up the tree by taking the maximum or minimum score of the child nodes (depending on the layer) until reaching the root node. 
 
 Consider the following example:
 
-1. represent our game as a tree structure, where the root node is our starting game state, and child nodes are subsequent game states attained by making a certain move
-2. 
+<img src="/images/minimax-image.png" width="400" align="middle">
 
 ### _Algorithm Optimizations_
 
