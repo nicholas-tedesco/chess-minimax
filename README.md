@@ -42,7 +42,7 @@ Opening books for chess engines typically follow a polyglot file format, which b
 
 <p float="middle">
   <img src="/images/test-opening-board.png" width="400" align="middle">
-   <img src="/images/test-opening-moves.png" width="150" align="middle">
+  <img src="/images/test-opening-moves.png" width="150" align="middle">
 </p>
 
 As you can see, our openings book contains a few possible continuations from this position. Although one move is technically the "best" in terms of weights, the other moves are also viable. In order to introduce some variability into this chess engine's openings, I decided to to use weighted random selection to choose moves from the opening book. 
@@ -51,6 +51,24 @@ For more on polyglot file structure, please visit http://hgm.nubati.net/book_for
 
 ### _Minimax_
 
+Minimax is a recursive, depth-first seach algorithm used to choose the most optimal move for a given game scenario. In order to implement minimax, we must be able to represent our game as a tree structure, where the root node is our starting game state and child nodes are subsquent game states reached by making a particular move. Minimax also relies on the use of a heuristic function, which assigns a score to a provided game state. 
+
+The core thought process behind minimax is to maximize score on our turn, and minimize score on our opponent's turn. This is completely reasonable; we should always prefer moves that yield the best possible score for our own player, whereas our opponent should always prefer moves that result in the worst possible score for our player. With this in mind, we can assign alternating "max" and "min" layers as we proceed down the game tree, starting with a max layer at the root node. We continue down the game tree in this fashion until reaching terminal nodes, which may be leaf nodes (i.e., representing game over), or simply nodes at the depth level specified for our search. The heuristic function is used to assign scores to the game states at the terminal nodes. Once we have the scores at the terminal nodes, we can proceed back up the tree by taking the maximum or minimum score of the child nodes (depending on the layer) until reaching the root node. 
+
+Consider the following example (taken from [baeldung.com](https://www.baeldung.com/java-minimax-algorithm)): 
+
+<img src="/images/minimax-demo.png" width="800" align="middle">
+
+Once we know our scores for the bottom four terminal nodes, we can proceed back up the tree by maximizing and minimizing on the appropriate layers. In this example, node values for the second layer of the tree are assigned by taking the minimum of child node scores in the third layer. Node values for the first layer (i.e., root node) are assigned by taking the maximum of child node scores in the second layer. 
+
+Arguably the most important aspect of the minimax algorithm is the heuristic function, considering this is what the algorithm uses to understand the favorability of a certain game state. In this project, we are using a heuristic function based on both material and position. In terms of material, we assign certain weights to each of the chess pieces (e.g., if we are white, white queen = 900, black queen = -900, white rook = 500, etc.), and calculate material score by summing the weights for the pieces on the board. In terms of position, we encourage the algorithm to place pieces on "better" squares by providing position tables for each piece type. Consider the position table for a knight: we may assign a negative score to a knight on its starting square (to encourage the algorithm to move the knight), a more neutral score to a knight on the edge of the board (where it controls fewer squares, but has moved away from its starting position), and a positive score to a knight in the center of the board (where it controls the most squares). As you might imagine, position tables can be a bit subjective depending on the given player's preferences for piece positioning. This project makes use of existing position tables taken from the [chess programming wiki page for evaluation functions](https://www.chessprogramming.org/Simplified_Evaluation_Function).
+
 ### _Algorithm Optimizations_
 
+Minimax can be quite slow when we have a high branching factor or depth of search. However, there are certain optimizations that can allow us to make fewer recursive calls, thus placing less computational stress on our algorithm. Here are the optimizations that I use in my implementation of minimax: 
 
+1. Transposition Tables
+- a transposition table is a dictionary of game states mapped to their associated scores 
+- if the game state exists in the transposition table, simply use the score from the table instead of continuing down the more intensive recursive evaluation path
+- Zobrist hashing is a common technique used to convert a game state into an acceptable key format for dictionaries; for more on Zobrist hashing, please visit its associated [chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing)
+2. Alpha-Beta Pruning
