@@ -51,6 +51,15 @@ For more on polyglot file structure, please visit http://hgm.nubati.net/book_for
 
 ### _Minimax_
 
+Minimax is a recursive, depth-first seach algorithm used to choose the most optimal move for a given game scenario. In order to implement minimax, we must be able to represent our game as a tree structure, where the root node is our starting game state and child nodes are subsquent game states reached by making a particular move. Minimax also relies on the use of a heuristic function, which assigns a score to a particular game state. 
+
+The core thought process behind minimax is to maximize score on our turn, and minimize score on the opponent's turn. This is completely reasonable, considering we would always prefer moves that yield the best possible score for our player, whereas our opponent would always prefer moves that result in the worst possible score for our player. With this in mind, we can assign alternating "max" and "min" layers as we proceed down the game tree, starting with a max layer at the root node. On max layers, we take the maximum of the child nodes; on min layers, we take the minimum of the child nodes. We continue down the game tree in this fashion until reaching terminal nodes, which may be true leaf nodes (i.e., representing the end of the game), or simply nodes at the depth level specified for our search. The heuristic function is used to assign scores to the game states at the terminal nodes. 
+
+Consider the following example:
+
+1. represent our game as a tree structure, where the root node is our starting game state, and child nodes are subsequent game states attained by making a certain move
+2. 
+
 ### _Algorithm Optimizations_
 
 
