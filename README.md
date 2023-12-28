@@ -65,7 +65,7 @@ Arguably the most important aspect of the minimax algorithm is the heuristic fun
 
 <img src="/images/knight-position-table.png" width="400" align="middle">
 
-As shown in the table, we assign a negative score to a knight on its starting square (to encourage the algorithm to move the knight), a more neutral score to a knight on the edge of the board (where it controls fewer squares, but has moved away from its starting position), and a positive score to a knight in the center of the board (where it controls the most squares). As you might imagine, position tables can be a bit subjective depending on the given player's preferences for piece positioning. This project makes use of existing position tables taken from the [chess programming wiki page for evaluation functions](https://www.chessprogramming.org/Simplified_Evaluation_Function).
+We assign the most negative scores to the positions in which the knight controls the fewest squares (edges + corners of the board), and the most positive scores to the positions in which the knight controls the most squares (center of the board). As you might imagine, position tables can be a bit subjective depending on the given player's preferences for piece positioning. This project makes use of existing position tables taken from the [chess programming wiki page for evaluation functions](https://www.chessprogramming.org/Simplified_Evaluation_Function).
 
 ### _Algorithm Optimizations_
 
