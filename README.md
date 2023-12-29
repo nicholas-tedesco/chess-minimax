@@ -58,9 +58,9 @@ The core objective behind minimax is to maximize score on our turn, and minimize
 
 Consider the following example: 
 
-<img src="/images/minimax-graph.png" width="600" align="middle">
+<img src="/images/minimax-demo.png" width="600" align="middle">
 
-The bottom four nodes (gray) are terminal; this is where scores are assigned. The second (red) layer represents our opponent's move; we take the minimum of the child nodes here. Finally, the first (blue) layer represents our player's move, so we take the maximum of the child nodes here. Although this example is a bit simple, minimax can become much more involved when we have a higher branching factor or depth of search. 
+After scores are assigned at the bottom (terminal) nodes, we can proceed back up the tree. In this example, we take the minimum of the child nodes at the second (red) layer, representing our opponent's turn; then, we take the maximum of the child nodes at the root layer, representin our player's turn. Although this example is a bit simple, minimax can become much more involved when we have a higher branching factor or depth of search.
 
 Arguably the most important aspect of the minimax algorithm is the heuristic function, considering this is what the algorithm uses to understand the favorability of a certain game state. In this project, we are using a heuristic function based on both material and position. In terms of material, we assign certain weights to each of the chess pieces (e.g., if we are white, white queen = 900, black queen = -900, white rook = 500, etc.), and calculate material score by summing the weights for the pieces on the board. In terms of position, we encourage the algorithm to place pieces on "better" squares by providing position tables for each piece type. A chess position table is simply a collection of all possible positions and associated scores for a given piece type. Consider the provided position table for a knight: 
 
@@ -70,7 +70,7 @@ We assign the most negative scores to the positions in which the knight controls
 
 ### _Algorithm Optimizations_
 
-Minimax can be quite slow when we have a high branching factor or depth of search. However, there are certain optimizations that can allow us to make fewer recursive calls, thus placing less computational stress on our algorithm. Here are the optimizations that I use in my implementation of minimax: 
+Minimax search is quite slow, especially when we have a high branching factor or depth of search. However, certain optimizations can be used to improve our algorithm's efficiency - for example, by skipping over certain nodes or avoiding the re-evaluation of nodes representing the same game state. Here are the optimizations that I use in my implementation of minimax: 
 
 Transposition Tables  
 - a transposition table is a dictionary of game states mapped to their associated scores   
@@ -78,9 +78,12 @@ Transposition Tables
 - Zobrist hashing is a common technique used to convert a game state into an acceptable key format for transposition dictionaries; please visit the [Zobrist hashing chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing) for more info on the topic  
    
 Alpha-Beta Pruning   
-- game tree pruning allows us to skip over the evaluation of certain nodes / paths while still finding the most optimal solution
-- to explain alpha-beta pruning, consider the example below:
-- we can maximize the amount of prune nodes by exploring the best moves first; see the iterative deepening section for more on how move sorting is implemented in this project 
+- pruning allows us to skip over the evaluation of certain nodes / paths while still finding the most optimal solution
+   - alpha and beta are dynamically-maintained bounds that dictate whether or not we will perform pruning 
+   - for example, in the above game tree, we never actually have to explore the fourth node on the bottom 
+      - if we know that the subtree on the left will return a 7, once we hit a value lower than 7 for the subtree on the right, we know that max(7, <7) will always be 7
+   - @raphsilva on GitHub has a nice [minimax_simulator](https://raphsilva.github.io/utilities/minimax_simulator/) if you'd like to try out some of your own pruning scenarios
+- we can maximize the amount of nodes pruned by exploring the best moves first; see the iterative deepening section for more on how move sorting is implemented in this project 
 
 Iterative Deepening  
 - iterative deepening is the process of incrementing our depth of search until reaching a goal / maximum depth
@@ -94,3 +97,9 @@ Iterative Deepening
 - alpha-beta pruning can be optimized by storing the best moves from the most recent (complete) iterative deepening search, then searching over these moves first at the next depth level
 
 ### _Future Directions_ 
+
+1. The scoring function can always be tweaked / improved...
+   - a better chess engine would change its scoring function depending on the stage of the game
+   - for example, we may want to have different positional weights at endgame vs. early game
+2. I'd like to implement some visualizations / trackers for alpha-beta pruning to see how many nodes are being pruned
+   - maybe this would be as simple as comparing counters for default minimax node exploration vs. alpha beta pruning?
