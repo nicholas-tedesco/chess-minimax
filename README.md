@@ -9,6 +9,7 @@ Implementation Summary:
 - else, agent uses minimax algorithm to choose move
 
 Change Log: 
+- 12/29/2023: recoded minimax class to implement alpha-beta pruning + iterative deepening 
 - 12/22/2023: overhaul to openings system; replaced PGN parsing with consultation of polyglot openings book
 - 12/09/2023: added explored game state lookup to minimax algorithm using Zobrist hashing 
 
@@ -72,12 +73,24 @@ We assign the most negative scores to the positions in which the knight controls
 Minimax can be quite slow when we have a high branching factor or depth of search. However, there are certain optimizations that can allow us to make fewer recursive calls, thus placing less computational stress on our algorithm. Here are the optimizations that I use in my implementation of minimax: 
 
 Transposition Tables  
-   - a transposition table is a dictionary of game states mapped to their associated scores   
-   - if the game state exists in the transposition table, simply use the score from the table instead of continuing down the more intensive recursive evaluation path  
-   - Zobrist hashing is a common technique used to convert a game state into an acceptable key format for transposition dictionaries; please visit the [Zobrist hashing chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing) for more info on the topic  
+- a transposition table is a dictionary of game states mapped to their associated scores   
+- if the game state exists in the transposition table, simply use the score from the table instead of continuing down the more intensive recursive evaluation path  
+- Zobrist hashing is a common technique used to convert a game state into an acceptable key format for transposition dictionaries; please visit the [Zobrist hashing chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing) for more info on the topic  
    
 Alpha-Beta Pruning   
-- test  
+- game tree pruning allows us to skip over the evaluation of certain nodes / paths while still finding the most optimal solution
+- to explain alpha-beta pruning, consider the example below:
+- we can maximize the amount of prune nodes by exploring the best moves first; see the iterative deepening section for more on how move sorting is implemented in this project 
 
 Iterative Deepening  
-- test  
+- iterative deepening is the process of incrementing our depth of search until reaching a goal / maximum depth
+   - for example, if we had a goal depth of 5, we might perform minimax search to a depth of 2 + save the move, then re-perform minimax search to a depth of 3 and save the move, and so on
+   - in this way, we are "iteratively deepening" our search
+- we specify a time limit for the iterative search in order to guarantee that the algorithm does not take a long time to search
+   - even if we exceed the time limit, we are guaranteed to have a chosen move from a previous iteration of the algorithm (so long as our minimum search depth is not too high)
+   - this also has implications for search depth at a given stage of the game:
+      - for chess, we have WAY more moves to explore at the beginning, so our searches may take longer (and iterative deepening may be a bit more shallow)
+      - at the end of the game, we may have less possible moves to explore, allowing us to search faster and reach a higher depth
+- alpha-beta pruning can be optimized by storing the best moves from the previous iteration of iterative deepening and searching over these moves first
+
+### _Future Directions_ 
