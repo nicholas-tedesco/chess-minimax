@@ -58,7 +58,7 @@ The core objective behind minimax is to maximize score on our turn, and minimize
 
 Consider the following example: 
 
-<img src="/images/minimax-graph.png" width="600" align="middle">
+<img src="/images/minimax-demo.png" width="600" align="middle">
 
 The bottom four nodes (gray) are terminal; this is where scores are assigned. The second (red) layer represents our opponent's move; we take the minimum of the child nodes here. Finally, the first (blue) layer represents our player's move, so we take the maximum of the child nodes here. Although this example is a bit simple, minimax can become much more involved when we have a higher branching factor or depth of search. 
 
