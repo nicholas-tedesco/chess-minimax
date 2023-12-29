@@ -91,6 +91,6 @@ Iterative Deepening
    - this also has implications for search depth at a given stage of the game:
       - for chess, we have WAY more moves to explore at the beginning, so our searches may take longer (and iterative deepening may be a bit more shallow)
       - at the end of the game, we may have less possible moves to explore, allowing us to search faster and reach a higher depth
-- alpha-beta pruning can be optimized by storing the best moves from the previous iteration of iterative deepening and searching over these moves first
+- alpha-beta pruning can be optimized by storing the best moves from the most recent (complete) iterative deepening search, then searching over these moves first at the next depth level
 
 ### _Future Directions_ 
