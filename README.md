@@ -79,11 +79,11 @@ Transposition Tables
    
 Alpha-Beta Pruning   
 - pruning allows us to skip over the evaluation of certain nodes / paths while still finding the most optimal solution
-- alpha and beta are dynamically-maintained bounds that dictate whether or not we will perform pruning 
-- for an explanation, consider the following example: 
-   - white has three possible moves, each with their own subtrees to a speciif
-   - 
-- we can maximize the amount of prune nodes by exploring the best moves first; see the iterative deepening section for more on how move sorting is implemented in this project 
+   - alpha and beta are dynamically-maintained bounds that dictate whether or not we will perform pruning 
+   - for example, in the above game tree, we never actually have to explore the fourth node on the bottom 
+      - if we know that the subtree on the left will return a 7, once we hit a value lower than 7 for the subtree on the right, we know that max(7, <7) will always be 7
+   - @raphsilva on GitHub has a nice [minimax_simulator](https://raphsilva.github.io/utilities/minimax_simulator/) if you'd like to try out some of your own pruning scenarios
+- we can maximize the amount of nodes pruned by exploring the best moves first; see the iterative deepening section for more on how move sorting is implemented in this project 
 
 Iterative Deepening  
 - iterative deepening is the process of incrementing our depth of search until reaching a goal / maximum depth
@@ -99,5 +99,7 @@ Iterative Deepening
 ### _Future Directions_ 
 
 1. The scoring function can always be tweaked / improved...
-2. 
-3. f
+   - a better chess engine would change its scoring function depending on the stage of the game
+   - for example, we may want to have different positional weights at endgame vs. early game
+2. I'd like to implement some visualizations / trackers for alpha-beta pruning to see how many nodes are being pruned
+   - maybe this would be as simple as comparing counters for default minimax node exploration vs. alpha beta pruning?
