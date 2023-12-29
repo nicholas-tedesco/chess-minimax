@@ -58,7 +58,7 @@ The core objective behind minimax is to maximize score on our turn, and minimize
 
 Consider the following example (taken from [baeldung.com](https://www.baeldung.com/java-minimax-algorithm)): 
 
-<img src="/images/minimax-demo.png" width="800" align="middle">
+<img src="/images/minimax-graph.png" width="800" align="middle">
 
 Once we know our scores for the bottom four terminal nodes, we can proceed back up the tree by maximizing and minimizing on the appropriate layers. In this example, node values for the second layer of the tree are assigned by taking the minimum of child node scores in the third layer. Node values for the first layer (i.e., root node) are assigned by taking the maximum of child node scores in the second layer. 
 
