@@ -70,7 +70,7 @@ We assign the most negative scores to the positions in which the knight controls
 
 ### _Algorithm Optimizations_
 
-Minimax can be quite slow when we have a high branching factor or depth of search. However, there are certain optimizations that can allow us to make fewer recursive calls, thus placing less computational stress on our algorithm. Here are the optimizations that I use in my implementation of minimax: 
+Minimax search is quite slow, especially when we have a high branching factor or depth of search. However, certain optimizations can be used to improve our algorithm's efficiency - for example, by skipping over certain nodes or avoiding the re-evaluation of nodes representing the same game state. Here are the optimizations that I use in my implementation of minimax: 
 
 Transposition Tables  
 - a transposition table is a dictionary of game states mapped to their associated scores   
@@ -78,8 +78,11 @@ Transposition Tables
 - Zobrist hashing is a common technique used to convert a game state into an acceptable key format for transposition dictionaries; please visit the [Zobrist hashing chess programming wiki page](https://www.chessprogramming.org/Zobrist_Hashing) for more info on the topic  
    
 Alpha-Beta Pruning   
-- game tree pruning allows us to skip over the evaluation of certain nodes / paths while still finding the most optimal solution
-- to explain alpha-beta pruning, consider the example below:
+- pruning allows us to skip over the evaluation of certain nodes / paths while still finding the most optimal solution
+- alpha and beta are dynamically-maintained bounds that dictate whether or not we will perform pruning 
+- for an explanation, consider the following example: 
+   - white has three possible moves, each with their own subtrees to a speciif
+   - 
 - we can maximize the amount of prune nodes by exploring the best moves first; see the iterative deepening section for more on how move sorting is implemented in this project 
 
 Iterative Deepening  
@@ -94,3 +97,7 @@ Iterative Deepening
 - alpha-beta pruning can be optimized by storing the best moves from the most recent (complete) iterative deepening search, then searching over these moves first at the next depth level
 
 ### _Future Directions_ 
+
+1. The scoring function can always be tweaked / improved...
+2. 
+3. f
